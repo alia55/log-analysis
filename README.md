@@ -36,7 +36,7 @@ python log-analysis.py
 
  we create a view for answering third question :
 
- Select t1.date,t1.error,t2.total from
+ CREATE VIEW summary AS Select t1.date,t1.error,t2.total from
 
 (select DATE(time) as date,count (status) as error from log  where status !='200 OK' group by date ) t1
 join
