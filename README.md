@@ -14,23 +14,26 @@ iii. Log:	table	includes	one	entry	for	each	time	a	user	has	accessed	the	site.
    * Virtual Machine:	https://www.virtualbox.org/wiki/Downloads
    * Download	a	FSND	virtual	machine:	https://github.com/udacity/fullstack-nanodegree-vm
    After downloading requierd software you can access VM by e	following	commands:
-  1) cd vagrant 
-  2) vagrant	up 
-  3) vagrant	ssh 
-  4) cd	/vagrant
+      1) cd vagrant 
+      2) vagrant	up 
+      3) vagrant	ssh 
+      4) cd	/vagrant
   
 ## 	Download	and	Load	the	Data
 In this project you need to download "newsdata.sql" DB from the link
     https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdat
     
-   * To load the DB in your project type
-      psql -d news -f newsdata.sql
-   * To run the database type
-    psql -d news
+* To load the DB in your project type
+
+    psql -d news -f newsdata.sql
+* To run the database type
+
+   psql -d news
 ## Running
 
 * Use  below command to run the python program that fetches query results.
-python log-analysis.py
+
+    python log-analysis.py
 
 ## Views we create a view for answering third question :
 
