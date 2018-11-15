@@ -29,13 +29,10 @@ In this project you need to download "newsdata.sql" DB from the link
 * To run the database type
 
    psql -d news
-## Running
-
-* Use  below command to run the python program that fetches query results.
-
-    python log-analysis.py
 
 ## Views we create a view for answering third question :
+you need to run the database type
+     psql -d news then crate the view
 
      CREATE VIEW summary AS Select t1.date,t1.error,t2.total from
 
@@ -44,3 +41,8 @@ In this project you need to download "newsdata.sql" DB from the link
 
     (select DATE(time) as date,count (*) as total from log  group by date) t2
     On t1.date = t2.date;
+## Running
+
+* Use  below command to run the python program that fetches query results.
+
+    python log-analysis.py
