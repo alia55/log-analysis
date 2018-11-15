@@ -31,8 +31,9 @@ In this project you need to download "newsdata.sql" DB from the link
    psql -d news
 
 ## Views we create a view for answering third question :
-you need to run the database type
-     psql -d news then crate the view
+* You need to run the database type
+     psql -d news 
+* Then crate the view
 
      CREATE VIEW summary AS Select t1.date,t1.error,t2.total from
 
