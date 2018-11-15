@@ -35,13 +35,13 @@ In this project you need to download "newsdata.sql" DB from the link
      psql -d news 
 * Then crate the view
 
-     CREATE VIEW summary AS Select t1.date,t1.error,t2.total from
+       CREATE VIEW summary AS Select t1.date,t1.error,t2.total from
 
-    (select DATE(time) as date,count (status) as error from log  where status !='200 OK' group by date ) t1
-    join
+      (select DATE(time) as date,count (status) as error from log  where status !='200 OK' group by date ) t1
+      join
 
-    (select DATE(time) as date,count (*) as total from log  group by date) t2
-    On t1.date = t2.date;
+      (select DATE(time) as date,count (*) as total from log  group by date) t2
+      On t1.date = t2.date;
 ## Running
 
 * Use  below command to run the python program that fetches query results.
