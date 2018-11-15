@@ -20,7 +20,7 @@ iii. Log:	table	includes	one	entry	for	each	time	a	user	has	accessed	the	site.
   4) cd	/vagrant
   
 ## 	Download	and	Load	the	Data
-    In this project you need to download 	“newsdata.sql” DB from the link
+In this project you need to download "newsdata.sql" DB from the link
     https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdat
     
    * To load the DB in your project type
@@ -32,14 +32,12 @@ iii. Log:	table	includes	one	entry	for	each	time	a	user	has	accessed	the	site.
 * Use  below command to run the python program that fetches query results.
 python log-analysis.py
 
-## Views
+## Views we create a view for answering third question :
 
- we create a view for answering third question :
+     CREATE VIEW summary AS Select t1.date,t1.error,t2.total from
 
- CREATE VIEW summary AS Select t1.date,t1.error,t2.total from
+    (select DATE(time) as date,count (status) as error from log  where status !='200 OK' group by date ) t1
+    join
 
-(select DATE(time) as date,count (status) as error from log  where status !='200 OK' group by date ) t1
-join
-
-(select DATE(time) as date,count (*) as total from log  group by date) t2
-On t1.date = t2.date;
+    (select DATE(time) as date,count (*) as total from log  group by date) t2
+    On t1.date = t2.date;
